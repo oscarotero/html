@@ -72,6 +72,7 @@ class HtmlTest extends TestCase
         $this->assertSame('<div class="foo"></div>', (string) div(['class' => 'foo']));
         $this->assertSame('<div class="foo"></div>', (string) div(['class' => ['foo']]));
         $this->assertSame('<div class="foo bar"></div>', (string) div(['class' => ['foo', 'bar']]));
+        $this->assertSame('<div class="foo bar"></div>', (string) div(['class' => ['foo', '', 'bar']]));
         $this->assertSame('<div class="foo"></div>', (string) div(['class' => ['foo' => true, 'bar' => false]]));
         $this->assertSame('<div class="foo"></div>', (string) div(['class' => ['foo' => 1, 'bar' => '']]));
         $this->assertSame('<div class="foo"></div>', (string) div(['class' => ['foo', 'bar' => false]]));

@@ -91,7 +91,9 @@ trait ElementTrait
 
         foreach ($values as $k => $v) {
             if (is_int($k)) {
-                $filtered[] = $v;
+                if ($v !== '' && $v !== false && $v !== null) {
+                    $filtered[] = $v;
+                }
                 continue;
             }
 

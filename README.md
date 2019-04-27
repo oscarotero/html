@@ -50,7 +50,7 @@ echo div('Hello world')->id('foo');
 //Both examples outputs: <div id="foo">Hello world</div>
 ```
 
-Any attribute with `null` value is omitted:
+All attributes with `null` as value are omitted:
 
 ```php
 //Add attributes using an array
@@ -64,7 +64,7 @@ echo div('Hello world')->id(null);
 
 ### Flags
 
-In HTMl, flags (or boolean attributes) are attributes that does not need a value. Use boolean values to add flags.
+In HTML, flags (or boolean attributes) are attributes that does not need a value. Use `boolean` values to add flags.
 
 Example using array syntax:
 
@@ -189,7 +189,7 @@ $article = unserialize($ser);
 
 ## Other interfaces implemented
 
-All elements that can contain children (not self closing elements like `<br>` or `<img>`) implement the following standard PHP interfaces:
+All elements that can contain children (not self-closing elements like `<br>` or `<img>`) implement the following standard PHP interfaces:
 
 ### ArrayAccess
 
