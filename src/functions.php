@@ -13,7 +13,7 @@ function array2Html(array $data): ElementInterface
         );
     }
 
-    $args = [$data['attributes']];
+    $args = [$data['attributes'] ?? []];
 
     if (isset($data['children'])) {
         foreach ($data['children'] as $child) {

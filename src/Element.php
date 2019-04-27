@@ -9,7 +9,7 @@ use ArrayIterator;
 use IteratorAggregate;
 use Countable;
 
-class Element extends SelfClosingElement implements ElementInterface, ArrayAccess, IteratorAggregate, Countable
+final class Element extends SelfClosingElement implements ElementInterface, ArrayAccess, IteratorAggregate, Countable
 {
     use ElementTrait;
 

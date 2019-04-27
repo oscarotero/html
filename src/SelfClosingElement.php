@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Html;
 
-class SelfClosingElement implements ElementInterface
+final class SelfClosingElement implements ElementInterface
 {
     use ElementTrait;
 
@@ -33,7 +33,7 @@ class SelfClosingElement implements ElementInterface
     public function unserialize($data)
     {
         $data = unserialize($data);
-        
+
         $this->tagName = $data['tag'];
         $this->attributes = $data['attributes'];
         $this->children = $data['children'];
