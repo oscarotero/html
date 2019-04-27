@@ -11,4 +11,6 @@ interface ElementInterface extends JsonSerializable, Serializable
     public function __call(string $name, array $arguments): ElementInterface;
 
     public function __toString(): string;
+
+    public function data(string $key, $value): ElementInterface;
 }

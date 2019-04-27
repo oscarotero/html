@@ -26,7 +26,7 @@ class Element extends SelfClosingElement implements ElementInterface, ArrayAcces
         }
 
         if ($children) {
-            return $element->innerHTML(...$children);
+            return $element->append(...$children);
         }
 
         return $element;
@@ -71,9 +71,11 @@ class Element extends SelfClosingElement implements ElementInterface, ArrayAcces
         $this->children = $data['children'];
     }
 
-    public function innerHTML(...$children): self
+    public function append(...$children): self
     {
-        $this->children = $children;
+        foreach ($children as $child) {
+            $this->offsetSet(null, $child);
+        }
 
         return $this;
     }
@@ -88,8 +90,10 @@ class Element extends SelfClosingElement implements ElementInterface, ArrayAcces
     }
     public function offsetSet($offset, $value)
     {
-        if (!\is_scalar($value) && $value instanceof ElementInterface) {
-            throw new InvalidArgumentException('Invalid child. Must be a scalar or an object implementing Html\\ElementInterface');
+        if (!\is_scalar($value) && !($value instanceof ElementInterface)) {
+            throw new InvalidArgumentException(
+                sprintf('Invalid child. Must be a scalar or an object implementing %s', ElementInterface::class)
+            );
         }
 
         if ($offset === null) {
