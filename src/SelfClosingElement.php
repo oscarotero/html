@@ -36,6 +36,5 @@ final class SelfClosingElement implements ElementInterface
 
         $this->tagName = $data['tag'];
         $this->attributes = $data['attributes'];
-        $this->children = $data['children'];
     }
 }

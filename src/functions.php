@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Html;
 
+use InvalidArgumentException;
+
 function array2Html(array $data): ElementInterface
 {
     $fn = "Html\\{$data['tag']}";
