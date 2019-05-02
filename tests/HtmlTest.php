@@ -139,4 +139,17 @@ class HtmlTest extends TestCase
         $div = div(1, 2, 3);
         $this->assertCount(3, $div);
     }
+
+    public function testNull()
+    {
+        $div = div(1, null, 3);
+        $this->assertCount(2, $div);
+        $this->assertSame('<div>13</div>', (string) $div);
+    }
+
+    public function testHTMLEntities()
+    {
+        $div = div('"Hello\'s" & <world>');
+        $this->assertSame('<div>"Hello\'s" &amp; &lt;world&gt;</div>', (string) $div);
+    }
 }

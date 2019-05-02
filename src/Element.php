@@ -90,10 +90,18 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
     }
     public function offsetSet($offset, $value)
     {
+        if ($value === null) {
+            return;
+        }
+
         if (!\is_scalar($value) && !($value instanceof ElementInterface)) {
             throw new InvalidArgumentException(
                 sprintf('Invalid child. Must be a scalar or an object implementing %s', ElementInterface::class)
             );
+        }
+
+        if (is_string($value)) {
+            $value = \htmlspecialchars($value, ENT_NOQUOTES);
         }
 
         if ($offset === null) {

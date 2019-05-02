@@ -29,6 +29,10 @@ echo div('Hello world');
 echo div('Hello', ' world');
 //<div>Hello world</div>
 
+//HTML entities are converted
+echo div('Hello', ' <world>');
+//<div>Hello &lt;world&gt;</div>
+
 //Create a div with html content
 echo div('Hello ', strong('world'));
 //<div>Hello <strong>world</strong></div>
@@ -229,4 +233,12 @@ To use `count()`:
 $div = div('First child', strong('Second child'), 'Third child');
 
 echo count($div); //3
+```
+
+Note that `NULL` children are discarded
+
+```php
+$div = div('First child', null, 'Third child');
+
+echo count($div); //2
 ```
