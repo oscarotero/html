@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 use function Html\div;
 use function Html\span;
 use function Html\strong;
+use function Html\input;
 use Html\ElementInterface;
 
 class HtmlTest extends TestCase
@@ -65,6 +66,9 @@ class HtmlTest extends TestCase
         $this->assertSame('<div title="foo"></div>', (string) div()->title('foo'));
         $this->assertSame('<div title="123"></div>', (string) div(['title' => 123]));
         $this->assertSame('<div title="123"></div>', (string) div()->title(123));
+
+        $this->assertSame('<input type="text">', (string) input(['type' => 'text']));
+        $this->assertSame('<input type="text">', (string) input()->type('text'));
     }
 
     public function testClasses()
