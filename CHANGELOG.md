@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.3] - 2019-06-15
+### Fixed
+- Fixed `<style>` and `<script>` elements that should not escape the strings.
+
 ## [0.1.2] - 2019-05-04
 ### Fixed
 - Fixed a bug on create a self closing element with an array of attributes: `input(['type' => 'text'])`.
@@ -17,5 +21,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0 - 2019-04-27
 First version
 
+[0.1.3]: https://github.com/oscarotero/html/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/oscarotero/html/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/oscarotero/html/compare/v0.1.0...v0.1.1

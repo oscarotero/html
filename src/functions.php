@@ -51,7 +51,7 @@ function meta(...$args): ElementInterface
 }
 function style(...$args): ElementInterface
 {
-    return Element::create('style', $args);
+    return Element::create('style', $args, Element::NO_ESCAPE_STRINGS);
 }
 function title(...$args): ElementInterface
 {
@@ -351,7 +351,7 @@ function noscript(...$args): ElementInterface
 }
 function script(...$args): ElementInterface
 {
-    return Element::create('script', $args);
+    return Element::create('script', $args, Element::NO_ESCAPE_STRINGS);
 }
 function del(...$args): ElementInterface
 {

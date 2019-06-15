@@ -144,4 +144,20 @@ class AllTagsTest extends TestCase
             $this->assertInstanceOf(Element::class, $tag);
         }
     }
+
+    public function testScript()
+    {
+        $text = 'console.log("<b>hello world</b>")';
+        $tag = \Html\script($text);
+
+        $this->assertSame("<script>{$text}</script>", (string) $tag);
+    }
+
+    public function testStyle()
+    {
+        $text = '.foo > div::after { content: ""; }';
+        $tag = \Html\style($text);
+
+        $this->assertSame("<style>{$text}</style>", (string) $tag);
+    }
 }

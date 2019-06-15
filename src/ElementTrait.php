@@ -7,10 +7,12 @@ trait ElementTrait
 {
     private $tagName;
     private $attributes = [];
+    private $options = 0;
 
-    public function __construct(string $tagName, array $attributes = [])
+    public function __construct(string $tagName, array $attributes = [], int $options = 0)
     {
         $this->tagName = $tagName;
+        $this->options = $options;
 
         foreach ($attributes as $name => $value) {
             if (is_int($name)) {

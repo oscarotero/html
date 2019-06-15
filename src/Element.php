@@ -13,16 +13,18 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
 {
     use ElementTrait;
 
+    const NO_ESCAPE_STRINGS = 2;
+
     private $children = [];
 
-    public static function create(string $tagName, array $children)
+    public static function create(string $tagName, array $children, int $options = 0)
     {
         if (isset($children[0]) && is_array($children[0])) {
             $attributes = array_shift($children);
 
-            $element = new static($tagName, $attributes);
+            $element = new static($tagName, $attributes, $options);
         } else {
-            $element = new static($tagName);
+            $element = new static($tagName, [], $options);
         }
 
         if ($children) {
@@ -100,7 +102,7 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
             );
         }
 
-        if (is_string($value)) {
+        if (is_string($value) && !($this->options & self::NO_ESCAPE_STRINGS)) {
             $value = \htmlspecialchars($value, ENT_NOQUOTES);
         }
 

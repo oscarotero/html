@@ -7,9 +7,9 @@ final class SelfClosingElement implements ElementInterface
 {
     use ElementTrait;
 
-    public static function create(string $tagName, array $attributes)
+    public static function create(string $tagName, array $attributes, int $options = 0)
     {
-        return new static($tagName, $attributes[0] ?? []);
+        return new static($tagName, $attributes[0] ?? [], $options);
     }
 
     public function __toString(): string
