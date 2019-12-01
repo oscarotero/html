@@ -3,12 +3,12 @@ declare(strict_types = 1);
 
 namespace Html\Tests;
 
-use PHPUnit\Framework\TestCase;
 use function Html\div;
+use Html\ElementInterface;
+use function Html\input;
 use function Html\span;
 use function Html\strong;
-use function Html\input;
-use Html\ElementInterface;
+use PHPUnit\Framework\TestCase;
 
 class HtmlTest extends TestCase
 {
@@ -124,7 +124,7 @@ class HtmlTest extends TestCase
 
         $this->assertSame('<div><strong>World</strong></div>', (string) $div);
     }
-    
+
     public function testIterator()
     {
         $div = div(1, 2, 3);

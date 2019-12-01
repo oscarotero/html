@@ -21,7 +21,7 @@ final class SelfClosingElement implements ElementInterface
     {
         return [
             'tag' => $this->tagName,
-            'attributes' => $this->attributes
+            'attributes' => $this->attributes,
         ];
     }
 

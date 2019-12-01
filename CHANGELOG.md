@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.4] - 2019-12-01
+### Fixed
+- The elements `area`, `track`, `embed`, `param`, `source` and `col` are [empty elements](https://developer.mozilla.org/en-US/docs/Glossary/empty_element) so they should use the `SelfClosingElement` class.
+
 ## [0.1.3] - 2019-06-15
 ### Fixed
 - Fixed `<style>` and `<script>` elements that should not escape the strings.

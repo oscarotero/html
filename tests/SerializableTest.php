@@ -3,10 +3,10 @@ declare(strict_types = 1);
 
 namespace Html\Tests;
 
-use PHPUnit\Framework\TestCase;
+use function Html\array2Html;
 use function Html\div;
 use function Html\strong;
-use function Html\array2Html;
+use PHPUnit\Framework\TestCase;
 
 class SerializableTest extends TestCase
 {
@@ -16,7 +16,7 @@ class SerializableTest extends TestCase
         $expected = [
             'tag' => 'div',
             'attributes' => [
-                'hidden' => true
+                'hidden' => true,
             ],
             'children' => [
                 'Hello ',
@@ -24,9 +24,9 @@ class SerializableTest extends TestCase
                     'tag' => 'strong',
                     'attributes' => [],
                     'children' => [
-                        'World'
+                        'World',
                     ],
-                ]
+                ],
             ],
         ];
 
@@ -43,7 +43,7 @@ class SerializableTest extends TestCase
 
         $ser = \serialize($div);
         $div2 = \unserialize($ser);
-        
+
         $this->assertSame((string) $div, (string) $div2);
     }
 }

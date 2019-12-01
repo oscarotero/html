@@ -3,11 +3,11 @@ declare(strict_types = 1);
 
 namespace Html;
 
-use InvalidArgumentException;
 use ArrayAccess;
 use ArrayIterator;
-use IteratorAggregate;
 use Countable;
+use InvalidArgumentException;
+use IteratorAggregate;
 
 final class Element implements ElementInterface, ArrayAccess, IteratorAggregate, Countable
 {
@@ -55,7 +55,7 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
         return [
             'tag' => $this->tagName,
             'attributes' => $this->attributes,
-            'children' => $this->children
+            'children' => $this->children,
         ];
     }
 
@@ -86,10 +86,12 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
     {
         return isset($this->children[$offset]);
     }
+
     public function offsetGet($offset)
     {
         return $this->children[$offset] ?? null;
     }
+
     public function offsetSet($offset, $value)
     {
         if ($value === null) {
@@ -112,14 +114,17 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
             $this->children[$offset] = $value;
         }
     }
+
     public function offsetUnset($offset)
     {
         unset($this->children[$offset]);
     }
+
     public function getIterator()
     {
         return new ArrayIterator($this->children);
     }
+
     public function count(): int
     {
         return count($this->children);

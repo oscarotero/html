@@ -26,7 +26,7 @@ function array2Html(array $data): ElementInterface
             $args[] = $child;
         }
     }
-    
+
     return $fn(...$args);
 }
 function html(...$args): ElementInterface
@@ -295,7 +295,7 @@ function wbr(...$args): ElementInterface
 }
 function area(...$args): ElementInterface
 {
-    return Element::create('area', $args);
+    return SelfClosingElement::create('area', $args);
 }
 function audio(...$args): ElementInterface
 {
@@ -311,7 +311,7 @@ function map(...$args): ElementInterface
 }
 function track(...$args): ElementInterface
 {
-    return Element::create('track', $args);
+    return SelfClosingElement::create('track', $args);
 }
 function video(...$args): ElementInterface
 {
@@ -319,7 +319,7 @@ function video(...$args): ElementInterface
 }
 function embed(...$args): ElementInterface
 {
-    return Element::create('embed', $args);
+    return SelfClosingElement::create('embed', $args);
 }
 function iframe(...$args): ElementInterface
 {
@@ -331,7 +331,7 @@ function object(...$args): ElementInterface
 }
 function param(...$args): ElementInterface
 {
-    return Element::create('param', $args);
+    return SelfClosingElement::create('param', $args);
 }
 function picture(...$args): ElementInterface
 {
@@ -339,7 +339,7 @@ function picture(...$args): ElementInterface
 }
 function source(...$args): ElementInterface
 {
-    return Element::create('source', $args);
+    return SelfClosingElement::create('source', $args);
 }
 function canvas(...$args): ElementInterface
 {
@@ -367,7 +367,7 @@ function caption(...$args): ElementInterface
 }
 function col(...$args): ElementInterface
 {
-    return Element::create('col', $args);
+    return SelfClosingElement::create('col', $args);
 }
 function colgroup(...$args): ElementInterface
 {
