@@ -15,7 +15,11 @@ function array2Html(array $data): ElementInterface
         );
     }
 
-    $args = [$data['attributes'] ?? []];
+    if ($data['tag'] === 'raw') {
+        $args = [];
+    } else {
+        $args = [$data['attributes'] ?? []];
+    }
 
     if (isset($data['children'])) {
         foreach ($data['children'] as $child) {
@@ -476,4 +480,8 @@ function slot(...$args): ElementInterface
 function template(...$args): ElementInterface
 {
     return Element::create('template', $args);
+}
+function raw(string ...$strings): ElementInterface
+{
+    return StringElement::create(...$strings);
 }

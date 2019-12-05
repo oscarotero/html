@@ -29,9 +29,13 @@ echo div('Hello world');
 echo div('Hello', ' world');
 //<div>Hello world</div>
 
-//HTML entities are converted
+//HTML entities are escaped
 echo div('Hello', ' <world>');
 //<div>Hello &lt;world&gt;</div>
+
+//Use the function raw() to do not escape html entities
+echo div('Hello', raw(' <world>'));
+//<div>Hello <world></div>
 
 //Create a div with html content
 echo div('Hello ', strong('world'));

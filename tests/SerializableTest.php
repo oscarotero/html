@@ -5,6 +5,7 @@ namespace Html\Tests;
 
 use function Html\array2Html;
 use function Html\div;
+use function Html\raw;
 use function Html\strong;
 use PHPUnit\Framework\TestCase;
 
@@ -12,7 +13,7 @@ class SerializableTest extends TestCase
 {
     public function testJson()
     {
-        $div = div('Hello ', strong('World'))->hidden();
+        $div = div('Hello ', strong(raw('<em>World</em>')))->hidden();
         $expected = [
             'tag' => 'div',
             'attributes' => [
@@ -24,7 +25,12 @@ class SerializableTest extends TestCase
                     'tag' => 'strong',
                     'attributes' => [],
                     'children' => [
-                        'World',
+                        [
+                            'tag' => 'raw',
+                            'children' => [
+                                '<em>World</em>',
+                            ],
+                        ],
                     ],
                 ],
             ],
@@ -39,7 +45,7 @@ class SerializableTest extends TestCase
 
     public function testSerialize()
     {
-        $div = div('Hello ', strong('World'))->hidden();
+        $div = div('Hello ', strong(raw('<em>World</em>')))->hidden();
 
         $ser = \serialize($div);
         $div2 = \unserialize($ser);

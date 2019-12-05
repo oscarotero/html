@@ -6,12 +6,20 @@ namespace Html\Tests;
 use function Html\div;
 use Html\ElementInterface;
 use function Html\input;
+use function Html\raw;
 use function Html\span;
 use function Html\strong;
 use PHPUnit\Framework\TestCase;
 
 class HtmlTest extends TestCase
 {
+    public function testRaw()
+    {
+        $raw = raw('<b>foo</b>');
+        $this->assertSame('<b>foo</b>', (string) $raw);
+        $this->assertInstanceOf(ElementInterface::class, $raw);
+    }
+
     public function testDiv()
     {
         $div = div();
