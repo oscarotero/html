@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.0] - 2025-03-27
+### Added
+- Support for PHP 8.4 and development improvements.
+
 ## [0.1.5] - 2019-12-05
 ### Added
 - New `raw()` function to add raw unescaped html.
@@ -30,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0 - 2019-04-27
 First version
 
+[1.0.0]: https://github.com/oscarotero/html/compare/v0.1.5..v1.0.0
 [0.1.5]: https://github.com/oscarotero/html/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/oscarotero/html/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/oscarotero/html/compare/v0.1.2...v0.1.3
