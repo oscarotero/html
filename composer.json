@@ -39,7 +39,7 @@
         }
     },
     "scripts": {
-        "cs": "phpcs",
+        "cs": "php-cs-fixer",
         "test": "phpunit",
         "cs-fix": "php-cs-fixer fix"
     }
