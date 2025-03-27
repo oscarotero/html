@@ -13,7 +13,7 @@ final class Element implements ElementInterface, ArrayAccess, IteratorAggregate,
 {
     use ElementTrait;
 
-    const NO_ESCAPE_STRINGS = 2;
+    public const NO_ESCAPE_STRINGS = 2;
 
     private $children = [];
 

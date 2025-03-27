@@ -31,6 +31,7 @@ trait ElementTrait
     public function __call(string $name, array $arguments): ElementInterface
     {
         $this->attributes[$name] = array_key_exists(0, $arguments) ? $arguments[0] : true;
+
         return $this;
     }
 
