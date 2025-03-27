@@ -18,12 +18,12 @@
         "issues": "https://github.com/oscarotero/html/issues"
     },
     "require": {
-        "php": "^7.2"
+        "php": ">=7.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.1",
-        "friendsofphp/php-cs-fixer": "^2.14",
-        "oscarotero/php-cs-fixer-config": "^1.0"
+        "phpunit/phpunit": "^8 || ^9",
+        "friendsofphp/php-cs-fixer": "^3",
+        "oscarotero/php-cs-fixer-config": "^2"
     },
     "autoload": {
         "psr-4": {
